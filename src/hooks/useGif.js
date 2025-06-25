@@ -1,4 +1,3 @@
-import React from "react";
 import { useState, useEffect } from "react";
 import axios from "axios";
 
@@ -11,7 +10,7 @@ const useGif = (tag) => {
 
 async function fetchdata(tag){
     setLoading(true);
-    const {data} = await axios.get(tag ? `$(url)&tag=${tag}` : url);
+    const {data} = await axios.get(tag ? `${url}&tag=${tag}` : url);
     const imageSource = data.data.images.downsized_large.url;
     setGif(imageSource);
     setLoading(false);
